@@ -20,6 +20,24 @@ use Dutek\Transformer\Transformer;
  */
 final class TransformedPredicateTest extends AbstractPredicateTestCase
 {
+    public function testGetTransformer()
+    {
+        $transformer = $this->createMock(Transformer::class);
+        $decoratedPredicate = $this->createPredicateMock(false);
+
+        $predicate = new TransformedPredicate($transformer, $decoratedPredicate);
+        $this->assertEquals($transformer, $predicate->getTransformer());
+    }
+
+    public function testGetPredicates()
+    {
+        $transformer = $this->createMock(Transformer::class);
+        $decoratedPredicate = $this->createPredicateMock(false);
+
+        $predicate = new TransformedPredicate($transformer, $decoratedPredicate);
+        $this->assertEquals([$decoratedPredicate], $predicate->getPredicates());
+    }
+
     public function testTransformAndEvaluate()
     {
         $originalValue = 'original-test-value';

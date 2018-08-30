@@ -22,6 +22,14 @@ use Throwable;
  */
 final class InstanceOfPredicateTest extends AbstractPredicateTestCase
 {
+    public function testGetType()
+    {
+        $value = Iterator::class;
+
+        $predicate = new InstanceOfPredicate($value);
+        $this->assertEquals($value, $predicate->getType());
+    }
+
     public function testValueIsInstanceOfPredicateEvaluatesToTrue()
     {
         $instanceOfPredicate = $this->getPredicateInstance(Iterator::class);

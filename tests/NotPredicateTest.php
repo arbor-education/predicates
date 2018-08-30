@@ -18,6 +18,14 @@ namespace Dutek\Predicate;
  */
 final class NotPredicateTest extends AbstractPredicateTestCase
 {
+    public function testGetPredicates()
+    {
+        $decoratedPredicate = $this->createPredicateMock(false);
+
+        $predicate = new NotPredicate($decoratedPredicate);
+        $this->assertEquals([$decoratedPredicate], $predicate->getPredicates());
+    }
+
     public function testFalseDecoratedPredicateEvaluatesToTrue()
     {
         $decoratedPredicate = $this->createPredicateMock(false);

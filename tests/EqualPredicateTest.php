@@ -18,6 +18,14 @@ namespace Dutek\Predicate;
  */
 final class EqualPredicateTest extends AbstractPredicateTestCase
 {
+    public function testGetValue()
+    {
+        $value = 'test-value';
+
+        $predicate = new EqualPredicate($value);
+        $this->assertEquals($value, $predicate->getValue());
+    }
+
     /**
      * @dataProvider equalValuesEvaluatesToTrueDataProvider
      * @param mixed $testValue

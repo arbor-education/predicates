@@ -18,6 +18,14 @@ namespace Dutek\Predicate;
  */
 abstract class AbstractQuantifierPredicateTestCase extends AbstractPredicateTestCase
 {
+    public function testGetPredicates()
+    {
+        $args = [$this->createPredicateMock(true), $this->createPredicateMock(true)];
+
+        $predicate = $this->getPredicateInstance(...$args);
+        $this->assertEquals($args, $predicate->getPredicates());
+    }
+
     /**
      * @param mixed ...$args
      * @return AbstractQuantifierPredicate
@@ -26,7 +34,11 @@ abstract class AbstractQuantifierPredicateTestCase extends AbstractPredicateTest
     {
         return parent::getPredicateInstance(
             ...array_map(function ($arg) {
-                return $this->createPredicateMock((bool) $arg);
+                if (!$arg instanceof Predicate) {
+                    $arg = $this->createPredicateMock((bool) $arg);
+                }
+
+                return $arg;
             }, $args)
         );
     }
