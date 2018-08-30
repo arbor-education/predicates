@@ -6,17 +6,6 @@
 [![Latest Version][ico-version]][link-packagist]
 [![PDS Skeleton][ico-pds]][link-pds]
 
-**Setup:** 
-
-1. `$ git clone --depth=1 https://github.com/nikolaposa/php-package-skeleton my-library`
-1. `$ cd my-library`
-1. `$ rm -rf .git`
-1. Replace ```Dusan Vejin``` ```dutekvejin``` ```dutekvejin@gmail.com``` ```https://github.com/dutekvejin``` ```dutekvejin``` ```predicates``` ```Collection handling in PHP``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE](LICENSE), [composer.json](composer.json) and [phpunit.xml.dist](phpunit.xml.dist) files either manually or by running `$ php prefill.php` in the command line.
-1. `$ composer install`
-1. Delete this paragraph and prefill.php.
-
-This is where your library description should be.
-
 ## Installation
 
 The preferred method of installation is via [Composer](http://getcomposer.org/). Run the following command to install the latest version of a package and add it to your project's `composer.json`:
