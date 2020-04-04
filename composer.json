@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "dutekvejin/transformers": "^0.1.0"
+        "dutekvejin/transformers": "^0.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.3",
